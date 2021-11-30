@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Ajouter un livre
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Ajouter un livre</h1>
+        {# {{ form(formLivre) }} #}
+        {{ form_start(formLivre) }}
+            {{ form_label(formLivre.titre)}}
+            </br>
+            {{ form_help(formLivre.titre, {'attr': {'class': 'form-text text-muted mt-2'}}) }}
+            {{ form_widget(formLivre.titre, {'attr': {'class': 'mb-3'}})}}
+
+            {{ form_label(formLivre.genre)}}
+            </br>
+            {{ form_help(formLivre.genre, {'attr': {'class': 'form-text text-muted mt-2'}}) }}
+            {{ form_widget(formLivre.genre, {'attr': {'class': 'mb-3'}})}}
+
+            {{ form_label(formLivre.resume)}}
+            </br>
+            {{ form_help(formLivre.resume, {'attr': {'class': 'form-text text-muted mt-2'}}) }}
+            {{ form_widget(formLivre.resume)}}
+        {{ form_end(formLivre) }}
+    </div>
+{% endblock %}

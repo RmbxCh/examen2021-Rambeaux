@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les genres{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="container">
+    <h1>Toutes les catégories</h1>
+    <p><a href={{ path('genre_create') }}>Ajouter une catégorie</a></p>
+    <table class="table">
+        <thead>
+            <th>Nom</th>
+        </thead>
+        <tbody>
+                {% for genre in genres %}
+                    <tr>
+                        <td>{{ genre.nom|capitalize }}</td>
+                        <td><a href={{ path('genre_edit', {id: genre.id}) }}>Modifier</a></td>
+                    </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+    
+</div>
+{% endblock %}

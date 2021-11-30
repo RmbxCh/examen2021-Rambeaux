@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catalogue des livres{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="container">
+    <h1>Liste des livres</h1>
+    <table class="table">
+        <thead>
+            <th>Titre du livre</th>
+        </thead>
+        <tbody>
+            {% for livre in livres %}
+                <tr>
+                    <td><a href={{ path('livre_show', {id: livre.id}) }}>{{ livre.titre }}</a></td>
+                    <td><a href={{ path('livre_edit', {id: livre.id}) }}>Modifier</a></td>
+                    <td><a href={{ path('livre_delete', {id: livre.id}) }}>Supprimer</a></td>
+                    <td><a href="#">Voter +</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    
+</div>
+{% endblock %}

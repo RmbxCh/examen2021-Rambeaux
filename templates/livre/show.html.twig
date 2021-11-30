@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ livre.titre }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>{{ livre.titre }}</h1>
+        <h2>Résumé : </h2>
+        <p>{{ livre.resume }}</p>
+        <h2>Date d'ajout</h2>
+        <p>Livre ajouté le {{ livre.dateAjout|date('d/m/Y') }}</p>
+        <h2>Genre :</h2>
+        <p>{{ livre.genre }}</p>
+        <h2>Nombres de votes :</h2>
+        <p>{{ livre.votes }}</p>
+    </div>
+
+{% endblock %}
